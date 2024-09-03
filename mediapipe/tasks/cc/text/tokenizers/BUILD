@@ -47,6 +47,7 @@ cc_library(
         "@org_tensorflow_text//tensorflow_text/core/kernels:regex_split",
         "@org_tensorflow_text//tensorflow_text/core/kernels:wordpiece_tokenizer",
     ],
+    alwayslink = 1,
 )
 
 cc_test(

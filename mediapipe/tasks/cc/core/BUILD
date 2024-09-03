@@ -89,6 +89,7 @@ cc_library(
         "//mediapipe/util/tflite/operations:transpose_conv_bias",
         "@org_tensorflow//tensorflow/lite/kernels:builtin_ops",
     ],
+    alwayslink = 1,
 )
 
 cc_library_with_tflite(

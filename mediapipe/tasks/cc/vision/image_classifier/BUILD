@@ -47,6 +47,7 @@ cc_library(
         "@com_google_absl//absl/status",
         "@com_google_absl//absl/status:statusor",
     ],
+    alwayslink = 1,
 )
 
 cc_library(
@@ -70,6 +71,22 @@ cc_library(
         "@com_google_absl//absl/status:statusor",
     ],
     alwayslink = 1,
+)
+
+cc_binary(
+    name = "libimage_classifier.so",
+    visibility = ["//visibility:public"],
+    linkopts = [
+        "-Wl,-soname=libimage_classifier.so",
+        "-fvisibility=hidden",
+    ],
+    linkshared = True,
+    tags = [
+        "manual",
+        "nobuilder",
+        "notap",
+    ],
+    deps = [":image_classifier"],
 )
 
 # TODO: This test fails in OSS

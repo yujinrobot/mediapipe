@@ -52,6 +52,7 @@ cc_library(
         "//mediapipe/tasks/cc/vision/hand_landmarker/proto:hand_landmarks_detector_graph_options_cc_proto",
         "@com_google_absl//absl/status:statusor",
     ],
+    alwayslink = 1,
 )
 
 cc_library(
