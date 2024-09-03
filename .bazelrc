@@ -16,6 +16,15 @@ build:linux --cxxopt=-std=c++17
 build:linux --host_cxxopt=-std=c++17
 build:linux --copt=-w
 
+build:linux --repo_env=CC=/usr/bin/gcc
+build:linux --repo_env=CXX=/usr/bin/g++
+# build:linux --cxxopt=-std=c++17
+# build:linux --host_cxxopt=-std=c++17
+
+build:linux --define MEDIAPIPE_DISABLE_GPU=1
+build:linux --copt=-DMEDIAPIPE_DISABLE_GPU
+
+
 # windows
 build:windows --cxxopt=/std:c++17
 build:windows --host_cxxopt=/std:c++17
